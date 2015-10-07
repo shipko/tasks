@@ -1,41 +1,46 @@
-Task name
-> start
+```
+├── deploy.md
+├── main.json
+├── private
+│   ├── prepare.sh
+│   ├── requirements.txt
+│   ├── run.py
+│   ├── static
+│   │   └── flag.txt
+│   └── templates
+├── public
+│   └── run.py
+├── README.md
+└── solve.md
+```
 
-category
-> web
+## Структура задания.
+Папка с названием задания. Её содержание:
 
-description
-> RU: Админ оставил файл с паролем на своем сервере. У тебя есть исходный код сервера. Найди пароль!
+1) Папка private. В ней исходные файлы задания для команды разработчиков.
 
-> ENG: Admin left a file with a password on the server. You have the source code for the server. Find the password!
+2) Папка public. В ней файлы для участников соревнований, которые им будет предложено скачать.
 
-author
-> iseption(Снежков Илья Андреевич)
+3) Файл deploy.md. В нём информация для разработчиков как правильно настроить инфраструктуру для задания.
 
-> http://vk.com/iseption
+4) Файл solve.md. В нём информация о там как привильно решать задание.
 
-> iseption@gmail.com
+5) Файл main.json. В нём конфигурационная информация для автоматического добавления задания, заполни его верно и проверь валидность файла [тут](http://jsonlint.com/).
 
-hints
-> 1) RU: Посмотри исходный код сервера
+6) Файл README.md. В нём информация из main.json только в читаемом виде.
 
-> ENG": Check the source code of the server
+Доступные категории: admin, joy, ctb, reverse, stegano, ppc, crypto, web.
 
-> 2)RU: Какие есть пути на сервере?
+Внутри конфигурационного файла указывать категорию из списка выше. Просто берете и копируете из списка, не надо менять регистр и т.д. и т.п.
 
-> ENG: What are some ways on the server?
+В папке example приведен пример правильно оформленного задания.
 
-value
-> 100
+## Рекомендации
 
-flag_type
-> static
+1) Заполняйте всё максимально понятно.
 
-flag_key
-> flag{asdzxcqwe}
+2) Если для решения используются специальные тулзы, статьи, скрипты, оставляйте ссылки в поле "special field" README.md
 
-files
-> ./run.py
+3) TODO
 
-special field
-> text here
+P.s. по всем вопросам в [VK](https://vk.com/iseption) или в [Telegram](https://telegram.me/iseption)
