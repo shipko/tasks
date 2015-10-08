@@ -30,7 +30,7 @@ example
 
 6) Файл README.md. В нём информация из main.json только в читаемом виде.
 
-Доступные категории: admin, joy, ctb, reverse, stegano, ppc, crypto, web, recon.
+Доступные категории: admin, joy, ctb, reverse, stegano, ppc, crypto, web, recon, forensics.
 
 Внутри конфигурационного файла указывать категорию из списка выше. Просто берете и копируете из списка, не надо менять регистр и т.д. и т.п.
 
