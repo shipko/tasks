@@ -23,5 +23,11 @@
          "name":"server",
          "location":"run.py"
       }
-   ]
+   ],
+   "author":{
+     "nick":"iseption",
+     "team":"ufologists",
+     "contacts":["iseption@gmail.com", "vk.com/iseption"]
+   },
+   "game":"ufoctf"
 }
