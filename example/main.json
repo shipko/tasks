@@ -25,9 +25,12 @@
       }
    ],
    "author":{
-     "nick":"iseption",
-     "team":"ufologists",
-     "contacts":["iseption@gmail.com", "vk.com/iseption"]
+      "nick":"iseption",
+      "team":"ufologists",
+      "contacts":[
+         "iseption@gmail.com",
+         "vk.com/iseption"
+      ]
    },
    "game":"ufoctf"
 }

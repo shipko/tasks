@@ -12,9 +12,14 @@ description
 author
 > iseption(Снежков Илья Андреевич)
 
+> ufologists
+
 > http://vk.com/iseption
 
 > iseption@gmail.com
+
+game
+> ufoctf
 
 hints
 > 1) RU: Посмотри исходный код сервера
