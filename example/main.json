@@ -1,42 +1,51 @@
 {
-   "name":"example",
-   "category":"web",
-   "description":{
-      "RU":"Админ оставил файл с паролем на своем сервере. У тебя есть исходный код сервера. Найди пароль!",
-      "ENG":"Admin left a file with a password on the server. You have the source code for the server. Find the password!"
-   },
-   "hints":[
-      {
-         "RU":"Посмотри исходный код сервера",
-         "ENG":"Check the source code of the server"
-      },
-      {
-         "RU":"Какие есть пути на сервере?",
-         "ENG":"What are some ways on the server?"
-      }
-   ],
-   "value":100,
-   "flag_type":"static",
-   "flag_key":"flag{asdzxcqwe}",
-   "files":[
-      {
-         "name":"server",
-         "location":"run.py"
-      }
-   ],
-   "links": [
-      {
-       "dropbox":"https://www.dropbox.com/s/ta9hiquj759o76p/find_me.rar?dl=0",
-       "yandex":"https://yadi.sk/d/hmQ2G-5IqKSWG"
-      }
-   ],
-   "author":{
-      "nick":"iseption",
-      "team":"ufologists",
-      "contacts":[
-         "iseption@gmail.com",
-         "vk.com/iseption"
-      ]
-   },
-   "game":"ufoctf"
+	"cpfq": 1,
+	"uuid": "be6e4b9e-ed05-485c-85d8-8308bdb25aeb",
+	"name":"example",
+	"category": "web",
+	"description":{
+		"RU":"Админ оставил файл с паролем на своем сервере. У тебя есть исходный код сервера. Найди пароль!",
+		"EN":"Admin left a file with a password on the server. You have the source code for the server. Find the password!"
+	},
+	"hints":[
+		{
+			"RU":"Посмотри исходный код сервера",
+			"EN":"Check the source code of the server"
+		},{
+			"RU":"Какие есть пути на сервере?",
+			"EN":"What are some ways on the server?"
+		}
+	],
+	"value":100,
+	"flag_type":"static",
+	"flag_format":"^flag{(.*)}$",
+	"flag_key":"flag{asdzxcqwe}",
+	"files":[
+		{
+			"name":"server",
+			"location":"run.py",
+			"md5": "b457a38bc0be84354e7be3f0f722fab1"
+		}
+	],
+	"links": [
+		{
+			"storage": "dropbox",
+			"url":"https://www.dropbox.com/s/ta9hiquj759o76p/find_me.rar?dl=0"
+		},{
+			"storage": "yandex",
+			"url":"https://yadi.sk/d/hmQ2G-5IqKSWG"
+		}
+	],
+	"authors":[
+		{
+			"name":"iseption",
+			"team":"ufologists",
+			"contacts":[
+				"iseption@gmail.com",
+				"vk.com/iseption"
+			]
+		}
+	],
+	"game_name":"FHQ2017",
+	"game_uuid":"c0a3d727-5f80-474b-a10e-3c56d1988ce8"
 }
