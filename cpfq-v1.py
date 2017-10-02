@@ -7,6 +7,7 @@ import sys
 import os.path
 import re
 import hashlib
+import uuid
 from pprint import pprint
 from subprocess import Popen, PIPE
 
@@ -555,6 +556,61 @@ def update_readme_(path):
 
 def create_(path):
 	print("Start create folder " + path)
+	if os.path.isdir(path):
+		print("[ERROR] Could not create " + path)
+		return -3
+
+	questname = path.split("/")[-1];
+
+	data = {}
+	data["cpfq"] = 1
+	data["uuid"] = str(uuid.uuid4())
+	data["name"] = questname
+	data["category"] = raw_input("Category(" + ', '.join(possible_categories)+ "): ")
+	data["value"] = raw_input("Value: ")
+	data["description"] = {}
+	data["description"]['RU'] = raw_input("Description_RU: ")
+	data["description"]['EN'] = raw_input("Description_EN: ")
+	data["game_name"] = raw_input("Game name: ")
+	data["game_uuid"] = raw_input("Game UUID: ")
+	data["flag_type"] = "static"
+	data["flag_format"] = "^flag{(.*)}$"
+	data["flag_key"] = raw_input("Flag: ")
+	data["files"] = []
+	data["hints"] = []
+	data["links"] = []
+	data["authors"] = []
+	au = {};
+	au['team'] = raw_input("Author Team: ")
+	au['name'] = raw_input("Author Name: ")
+	cont = raw_input("Author Contact: ")
+	au['contacts'] = []
+	au['contacts'].append(cont);
+	
+	data["authors"].append(au);
+	
+	os.makedirs(path)
+	os.makedirs(path + '/public')
+	os.makedirs(path + '/private')
+	os.makedirs(path + '/private/static')
+	
+	deploy = open(path + '/private/DEPLOY.md', 'w')
+	deploy.write("# Deploy ")
+	deploy.close();
+	
+	flag_txt = open(path + '/private/static/flag.txt', 'w')
+	flag_txt.write(data["flag_key"])
+	flag_txt.close();
+	
+	solve = open(path + '/SOLVE.md', 'w')
+	solve.write("# Solve for " + questname)
+	solve.close	
+
+	with open(path + '/main.json', 'w') as main_json:
+		json.dump(data, main_json, indent=4, sort_keys=False)
+	
+	check_(path);
+	
 
 
 ###############################
@@ -564,8 +620,6 @@ def create_(path):
 if len(sys.argv) != 3:
 	print("\nUsage: " + sys.argv[0] + " [check|update_readme|create] <path-to-folder>")
 	exit(-1)
-
-
 
 command = sys.argv[1]
 
