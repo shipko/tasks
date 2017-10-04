@@ -1,3 +1,10 @@
+# cross-platform-format-quest-v1 (CPFQ-v1)
+
+This format will be used for migartion quests between different CTF-systems.
+
+Ver. 1 (2017)
+
+
 ```
 example
 ├── deploy.md
@@ -15,36 +22,43 @@ example
 └── solve.md
 ```
 
-## Структура задания.
-Папка с названием задания. Её содержание:
+## Package structure
 
-1) Папка private. В ней исходные файлы задания для команды разработчиков.
+### For developers/organizators
 
-2) Папка public. В ней файлы для участников соревнований, которые им будет предложено скачать.
+* Folder `private` - contains files for developers of quest
+* File `deploy.md` - description of "How to prepare infostructure or how to regenerate files for quest"
+* File `solve.md` - description for how to solving quest
 
-3) Файл deploy.md. В нём информация для разработчиков как правильно настроить инфраструктуру для задания.
+### For import to system
 
-4) Файл solve.md. В нём информация о там как привильно решать задание.
+* File `main.json` - data for import to system. For check just run: `python3 cpfq-v1.py check <path-to-folder>`
+* File `README.md` - in human information. You can use for autogenerate `python3 cpfq-v1.py update_readme <path-to-folder>`
 
-5) Файл main.json. В нём конфигурационная информация для автоматического добавления задания, заполни его верно и проверь валидность файла [тут](http://jsonlint.com/).
+### categories:
 
-6) Файл README.md. В нём информация из main.json только в читаемом виде.
+ - admin
+ - crypto
+ - enjoi or joi
+ - reverse
+ - stegano
+ - ppc
+ - web
+ - recon
+ - forensics
+ - hashes
+ - ctd - ???
 
-**Доступные категории:** admin, joy, ctb, reverse, stegano, ppc, crypto, web, recon, forensics.
+In folder `example` you can see correct format of task.
 
-Внутри конфигурационного файла указывать категорию из списка выше. Просто берете и копируете из списка, не надо менять регистр и т.д. и т.п.
+## How to fill main.json
 
-В папке example приведен пример правильно оформленного задания.
+Please copy folder `example` and change inside. After this: `python3 cpfq-v1.py check <path-to-folder>`
 
-## Заполнение main.json
-TODO
+Or  run `python3 cpfq-v1.py create <path-to-folder>` and follow instructions
 
-## Рекомендации
+## Recomendations:
 
-1) Заполняйте всё максимально понятно.
+Please fill enough information for understand outside developers. And ofcause contact with developers/organizators.
 
-2) Если для решения используются специальные тулзы, статьи, скрипты, оставляйте ссылки в поле "special field" README.md
 
-3) TODO
-
-P.s. по всем вопросам в [VK](https://vk.com/iseption) или в [Telegram](https://telegram.me/iseption)
